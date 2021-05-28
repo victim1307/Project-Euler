@@ -431,3 +431,33 @@ for j in range(0,len(a)):
 	b=b+a[j]
 print(b)
 ```
+21.Let d(n) be defined as the sum of proper divisors of n (numbers less than n which divide evenly into n).
+If d(a) = b and d(b) = a, where a ≠ b, then a and b are an amicable pair and each of a and b are called amicable numbers.
+
+For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
+
+Evaluate the sum of all the amicable numbers under 10000.
+```python
+lst2=[]
+d=0
+for x in range(1,10000):
+	lst=[]
+	lst1=[]
+	a=0
+	b=0
+	for i in range(1,x):
+		if x%i==0:
+			lst.append(i)
+	for j in range(len(lst)):
+		a=a+lst[j]
+	for k in range(1,a):
+		if a%k==0:
+			lst1.append(k)
+	for l in range(len(lst1)):
+		b=b+lst1[l]
+	if(x==b and a!=b):
+		lst2.append(x)
+for y in range(len(lst2)):
+	d+=lst2[y]
+print(d)
+```
