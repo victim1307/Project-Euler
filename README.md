@@ -415,4 +415,19 @@ for i in range(len(lst)-2,-1,-1):
 		lst[i][j]+=max(lst[i+1][j],lst[i+1][j+1])
 print(lst[0][0])
 ```
+20.n! means n × (n − 1) × ... × 3 × 2 × 1
 
+For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,
+and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
+
+Find the sum of the digits in the number 100!
+```python
+a=1
+for i in range(1,101):
+	a=a*i
+a=[int(x) for x in str(a)]
+b=0
+for j in range(0,len(a)):
+	b=b+a[j]
+print(b)
+```
