@@ -413,8 +413,6 @@ lst=[[75],[95,64],[17,47,82],[18,35,87,10],[20,4,82,47,65],[19,1,23,75,3,34],[88
 for i in range(len(lst)-2,-1,-1):
 	for j in range(len(lst[i])):
 		lst[i][j]+=max(lst[i+1][j],lst[i+1][j+1])
-		c+=1
-	lst.pop()
 print(lst[0][0])
 ```
 
