@@ -740,3 +740,32 @@ for x_limit, y_limit in [(9, 10000), (100, 1000)]:
 
 print(sum(products))
 ```
+33.The fraction 49/98 is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that 49/98 = 4/8, which is correct, is obtained by cancelling the 9s.
+
+We shall consider fractions like, 30/50 = 3/5, to be trivial examples.
+
+There are exactly four non-trivial examples of this type of fraction, less than one in value, and containing two digits in the numerator and denominator.
+
+If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
+```py
+mul=1
+count=0
+for i in range(10,100):
+	for j in range(10,100):
+		lst1=[]
+		lst1=[int(x) for x in str(i)]
+		lst2=[]
+		lst2=[int(x) for x in str(j)]
+		lst=(list(set(lst2)^set(lst1)))
+		if (len(lst)==2 and (lst[0]!=0 and lst[1]!=0) and len(list(set(lst1)))!=1 and len(list(set(lst2)))!=1 and i%10!=0 and j%10!=0):
+			if ((lst[0]/lst[1]==(i/j) and (lst[0]/lst[1])<1) and (j/i)<1):
+				mul*=(i/j)
+				print(i,j)
+				print(lst)
+				#there is 1 erroe in this code...Getting 2 values more that expected (which i/j is greater than 1)
+			elif ((lst[1]/lst[0]==(i/j) and (lst[1]/lst[0])<1) and (i/j)<1):
+				mul*=(i/j)
+				print(i,j)
+				print(lst)
+print(mul)
+```
