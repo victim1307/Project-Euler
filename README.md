@@ -728,7 +728,7 @@ Find the sum of all products whose multiplicand/multiplier/product identity can 
 
 HINT: Some products can be obtained in more than one way so be sure to only include it once in your sum.
 
-```
+```py
 products = set()
 pandigital = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 for x_limit, y_limit in [(9, 10000), (100, 1000)]:
